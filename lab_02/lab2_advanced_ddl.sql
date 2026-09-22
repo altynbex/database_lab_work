@@ -1,10 +1,3 @@
--- Laboratory work 2
-
--- part 1 Multiple Database Management
-
--- task 1.1 Database creation with parameters
-
-
 CREATE DATABASE university_main
     OWNER = altynbekamankozha
     TEMPLATE = template0
@@ -18,8 +11,6 @@ CREATE DATABASE university_test
     IS_TEMPLATE = true
     CONNECTION LIMIT = 10;
 
--- task 1.2 Tablespace Operations
-
 CREATE TABLESPACE student_data LOCATION '/Users/altynbekamankozha/lab2_data/students';
 
 CREATE TABLESPACE course_data
@@ -32,10 +23,6 @@ CREATE DATABASE university_distributed
     ENCODING = 'LATIN9'
     LC_COLLATE = 'C'
     LC_CTYPE = 'C';
-
--- part 2 Complex Table Creation
-
--- task 2.1 University Management System
 
 CREATE TABLE students (
     student_id       SERIAL PRIMARY KEY,
@@ -74,8 +61,6 @@ CREATE TABLE courses (
     created_at      TIMESTAMP
 );
 
--- task 2.2 Time based and Specialized Tables
-
 CREATE TABLE class_schedule (
     schedule_id    SERIAL PRIMARY KEY,
     course_id      INTEGER,
@@ -99,11 +84,6 @@ CREATE TABLE student_records (
     last_updated              TIMESTAMPTZ
 );
 
--- part 3 Advanced ALTER TABLE Operations
-
--- task 3.1 Modifying Existing Tables
-
--- students table
 ALTER TABLE students ADD COLUMN middle_name VARCHAR(30);
 
 ALTER TABLE students ADD COLUMN student_status VARCHAR(20);
@@ -114,7 +94,7 @@ ALTER TABLE students ALTER COLUMN student_status SET DEFAULT 'ACTIVE';
 
 ALTER TABLE students ALTER COLUMN gpa SET DEFAULT 0.00;
 
--- professors table
+
 ALTER TABLE professors ADD COLUMN department_code CHAR(5);
 
 ALTER TABLE professors ADD COLUMN research_area TEXT;
@@ -125,7 +105,7 @@ ALTER TABLE professors ALTER COLUMN is_tenured SET DEFAULT false;
 
 ALTER TABLE professors ADD COLUMN last_promotion_date DATE;
 
--- courses table
+
 ALTER TABLE courses ADD COLUMN prerequisite_course_id INTEGER;
 
 ALTER TABLE courses ADD COLUMN difficulty_level SMALLINT;
@@ -136,9 +116,7 @@ ALTER TABLE courses ALTER COLUMN credits SET DEFAULT 3;
 
 ALTER TABLE courses ADD COLUMN lab_required BOOLEAN DEFAULT false;
 
--- task 3.2 column management operations
 
--- class_schedule table
 ALTER TABLE class_schedule ADD COLUMN room_capacity INTEGER;
 
 ALTER TABLE class_schedule DROP COLUMN duration;
@@ -149,7 +127,7 @@ ALTER TABLE class_schedule ALTER COLUMN classroom TYPE VARCHAR(30);
 
 ALTER TABLE class_schedule ADD COLUMN equipment_needed TEXT;
 
--- student_records table
+
 ALTER TABLE student_records ADD COLUMN extra_credit_points NUMERIC(3,1);
 
 ALTER TABLE student_records ALTER COLUMN grade TYPE VARCHAR(5);
@@ -160,9 +138,8 @@ ALTER TABLE student_records ADD COLUMN final_exam_date DATE;
 
 ALTER TABLE student_records DROP COLUMN last_updated;
 
--- part 4 Table Relationships and Management
 
--- task 4.1 Additional Supporting Tables
+
 CREATE TABLE departments (
     department_id      SERIAL PRIMARY KEY,
     department_name    VARCHAR(100),
@@ -196,16 +173,15 @@ CREATE TABLE student_book_loans (
     loan_status   VARCHAR(20)
 );
 
--- task 4.2 Table Modifications for Integration
 
--- 1)
+
 ALTER TABLE professors ADD COLUMN department_id INTEGER;
 
 ALTER TABLE students ADD COLUMN advisor_id INTEGER;
 
 ALTER TABLE courses ADD COLUMN department_id INTEGER;
 
--- 2)
+
 CREATE TABLE grade_scale (
     grade_id         SERIAL PRIMARY KEY,
     letter_grade     CHAR(2),
@@ -224,18 +200,17 @@ CREATE TABLE semester_calendar (
     is_current                BOOLEAN
 );
 
--- part 5 - Table Deletion and Cleanup
 
--- task 5.1 Conditional Table Operations
 
--- 1)
+
 DROP TABLE IF EXISTS student_book_loans;
 
 DROP TABLE IF EXISTS library_books;
 
 DROP TABLE IF EXISTS grade_scale;
 
--- 2)
+
+
 CREATE TABLE grade_scale (
     grade_id         SERIAL PRIMARY KEY,
     letter_grade     CHAR(2),
@@ -245,7 +220,7 @@ CREATE TABLE grade_scale (
     description      TEXT
 );
 
--- 3)
+
 DROP TABLE IF EXISTS semester_calendar CASCADE;
 
 CREATE TABLE semester_calendar (
@@ -258,7 +233,7 @@ CREATE TABLE semester_calendar (
     is_current                BOOLEAN
 );
 
--- task 5.2 Database Cleanup
+
 
 ALTER DATABASE university_test WITH IS_TEMPLATE false;
 
