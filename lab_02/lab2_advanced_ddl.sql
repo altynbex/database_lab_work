@@ -1,6 +1,6 @@
--- Laboratory work 2 - Advanced DDL Operations
+-- Laboratory work 2
 
--- part 1 - Multiple Database Management
+-- part 1 Multiple Database Management
 
 -- task 1.1 Database creation with parameters
 
@@ -33,7 +33,7 @@ CREATE DATABASE university_distributed
     LC_COLLATE = 'C'
     LC_CTYPE = 'C';
 
--- part 2 - Complex Table Creation
+-- part 2 Complex Table Creation
 
 -- task 2.1 University Management System
 
@@ -99,7 +99,7 @@ CREATE TABLE student_records (
     last_updated              TIMESTAMPTZ
 );
 
--- part 3 - Advanced ALTER TABLE Operations
+-- part 3 Advanced ALTER TABLE Operations
 
 -- task 3.1 Modifying Existing Tables
 
@@ -160,7 +160,7 @@ ALTER TABLE student_records ADD COLUMN final_exam_date DATE;
 
 ALTER TABLE student_records DROP COLUMN last_updated;
 
--- part 4 - Table Relationships and Management
+-- part 4 Table Relationships and Management
 
 -- task 4.1 Additional Supporting Tables
 CREATE TABLE departments (
