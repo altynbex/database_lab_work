@@ -1,0 +1,10 @@
+record_id,integer,,nextval('student_records_record_id_seq'::regclass),NO
+student_id,integer,,,YES
+course_id,integer,,,YES
+semester,character varying,20,,YES
+year,integer,,,YES
+grade,character varying,5,,YES
+attendance_percentage,numeric,,,YES
+submission_timestamp,timestamp with time zone,,,YES
+extra_credit_points,numeric,,0.0,YES
+final_exam_date,date,,,YES

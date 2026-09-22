@@ -1,0 +1,13 @@
+course_id,integer,,nextval('courses_course_id_seq'::regclass),NO
+course_code,character varying,10,,YES
+course_title,character varying,100,,YES
+description,text,,,YES
+credits,smallint,,3,YES
+max_enrollment,integer,,,YES
+course_fee,numeric,,,YES
+is_online,boolean,,,YES
+created_at,timestamp without time zone,,,YES
+prerequisite_course_id,integer,,,YES
+difficulty_level,smallint,,,YES
+lab_required,boolean,,false,YES
+department_id,integer,,,YES

@@ -1,0 +1,7 @@
+department_id,integer,,nextval('departments_department_id_seq'::regclass),NO
+department_name,character varying,100,,YES
+department_code,character,5,,YES
+building,character varying,50,,YES
+phone,character varying,15,,YES
+budget,numeric,,,YES
+established_year,integer,,,YES

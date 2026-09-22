@@ -1,0 +1,6 @@
+grade_id,integer,,nextval('grade_scale_grade_id_seq'::regclass),NO
+letter_grade,character,2,,YES
+min_percentage,numeric,,,YES
+max_percentage,numeric,,,YES
+gpa_points,numeric,,,YES
+description,text,,,YES

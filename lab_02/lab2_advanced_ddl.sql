@@ -224,7 +224,7 @@ CREATE TABLE semester_calendar (
     is_current                BOOLEAN
 );
 
--- Part 5 - Table Deletion and Cleanup
+-- part 5 - Table Deletion and Cleanup
 
 -- task 5.1 Conditional Table Operations
 

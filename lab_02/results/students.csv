@@ -1,0 +1,13 @@
+student_id,integer,,nextval('students_student_id_seq'::regclass),NO
+first_name,character varying,50,,YES
+last_name,character varying,50,,YES
+email,character varying,100,,YES
+phone,character varying,20,,YES
+date_of_birth,date,,,YES
+enrollment_date,date,,,YES
+gpa,numeric,,0.00,YES
+is_active,boolean,,,YES
+graduation_year,smallint,,,YES
+middle_name,character varying,30,,YES
+student_status,character varying,20,'ACTIVE'::character varying,YES
+advisor_id,integer,,,YES

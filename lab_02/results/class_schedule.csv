@@ -1,0 +1,10 @@
+schedule_id,integer,,nextval('class_schedule_schedule_id_seq'::regclass),NO
+course_id,integer,,,YES
+professor_id,integer,,,YES
+classroom,character varying,30,,YES
+class_date,date,,,YES
+start_time,time without time zone,,,YES
+end_time,time without time zone,,,YES
+room_capacity,integer,,,YES
+session_type,character varying,15,,YES
+equipment_needed,text,,,YES

@@ -1,0 +1,7 @@
+semester_id,integer,,nextval('semester_calendar_semester_id_seq'::regclass),NO
+semester_name,character varying,20,,YES
+academic_year,integer,,,YES
+start_date,date,,,YES
+end_date,date,,,YES
+registration_deadline,timestamp with time zone,,,YES
+is_current,boolean,,,YES

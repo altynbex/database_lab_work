@@ -1,0 +1,13 @@
+professor_id,integer,,nextval('professors_professor_id_seq'::regclass),NO
+first_name,character varying,50,,YES
+last_name,character varying,50,,YES
+email,character varying,100,,YES
+office_number,character varying,20,,YES
+hire_date,date,,,YES
+salary,numeric,,,YES
+is_tenured,boolean,,false,YES
+years_experience,smallint,,,YES
+department_code,character,5,,YES
+research_area,text,,,YES
+last_promotion_date,date,,,YES
+department_id,integer,,,YES
