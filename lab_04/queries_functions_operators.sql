@@ -1,10 +1,8 @@
 
+DROP TABLE IF EXISTS assignments;
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS projects;
-DROP TABLE if EXISTS assignments;
 
-
--- Create tables
 CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
@@ -30,7 +28,7 @@ CREATE TABLE assignments (
     hours_worked NUMERIC(5,1),
     assignment_date DATE
 );
--- Insert sample data
+
 INSERT INTO employees (first_name, last_name, department, salary, hire_date, manager_id, email) VALUES
     ('John', 'Smith', 'IT', 75000, '2020-01-15', NULL,'john.smith@company.com'),
     ('Sarah', 'Johnson', 'IT', 65000, '2020-03-20', 1,'sarah.j@company.com'),
@@ -55,7 +53,8 @@ INSERT INTO assignments (employee_id, project_id, hours_worked, assignment_date)
 
 --Task 1.1
 
-select (employees.first_name, employees.last_name) as full_name, employees.department, employees.salary from employees;
+select first_name || ' ' || last_name as full_name, department, salary from employees;
+
 
 --Task 1.2
 
@@ -74,8 +73,9 @@ from projects;
 
 --Task 1.4
 
-select (employees.first_name, employees.last_name) as names,
+select first_name || ' ' || last_name as names,
        coalesce(employees.email, 'no email provided') as email from employees;
+
 
 --Task 2.1
 
@@ -96,18 +96,20 @@ select * from employees where manager_id is not null and department = 'IT';
 --Task 3.1
 
 select
-    (upper(employees.first_name), upper(employees.last_name)) as names,
+    upper(first_name || ' ' || last_name) as names,
     length(employees.last_name) as length_last_name,
     substring(employees.email from 1 for 3) as email_first_3
 from employees;
 
+
 --Task 3.2
 
-select (first_name, last_name) as names,
-       employees.salary * 12 as annual_salary,
-       round(employees.salary, 2) as monthly_salary,
-       employees.salary * 0.10 as raise_amount
+select first_name || ' ' || last_name as full_name,
+       salary * 12 as annual_salary,
+       round(salary, 2) as monthly_salary,
+       salary * 0.10 as raise_amount
 from employees;
+
 
 --Task 3.3
 
