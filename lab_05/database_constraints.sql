@@ -465,9 +465,3 @@ select
 from order_details
 join products
     on order_details.product_id = products.product_id;
-
--- final results:
--- all valid inserts should succeed
--- uncommented invalid test statements should fail
--- task 5.3 cascade test should leave only item_id 3
--- task 6.1 creates four tables with five sample rows each
