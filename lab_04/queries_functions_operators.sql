@@ -122,7 +122,7 @@ select format(
 
 --Task 3.4
 
-select (employees.first_name, employees.last_name) as names,
+select employees.first_name || ' ' || employees.last_name as names,
        extract(year from age(current_date, employees.hire_date)) as years_with_company
 from employees;
 
